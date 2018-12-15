@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            background: linear-gradient(#ccc,#0f0);
+            transition:2s linear;
+        }
+        input:hover{
+            background: linear-gradient(#f00,#ccc);
+        }
+    </style>
+</head>
+
+<body>
+<input type="submit">
+</body>
+<script>
+    // 第一年有一只羊，第十年有几只羊
+ function sheepNum(year){
+     var num =1
+     for(var i=1;i<=year;i++){
+         if(i==2){
+             num+=sheepNum(year-2)
+         }
+         if(i==4){
+             num+=sheepNum(year-4)
+         }
+         if(i==5){
+             num--
+         }
+     }
+     return num
+ }
+   alert(sheepNum(10))
+
+
+//    阶乘的递归算法
+    var t =0
+    function jiecheng(num){
+        if(num>1){
+            t=num*jiecheng(num-1)
+        }else{
+            t=num
+        }
+        return t
+    }
+
+console.log(jiecheng(3))
+
+</script>
+</html>
